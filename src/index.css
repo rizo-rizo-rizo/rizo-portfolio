@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-fixed: #5af8fb;
+  --color-on-error: #690005;
+  --color-inverse-on-surface: #2f3034;
+  --color-background: #111316;
+  --color-on-tertiary-fixed: #410000;
+  --color-on-primary-container: #008d8f;
+  --color-inverse-primary: #00696b;
+  --color-outline: #8f9094;
+  --color-surface-dim: #111316;
+  --color-on-tertiary: #690000;
+  --color-secondary-fixed-dim: #b8c8da;
+  --color-secondary: #b8c8da;
+  --color-on-background: #e2e2e6;
+  --color-tertiary-container: #320000;
+  --color-on-surface: #e2e2e6;
+  --color-surface-container-high: #282a2d;
+  --color-on-surface-variant: #c6c6ca;
+  --color-surface-variant: #333538;
+  --color-surface: #111316;
+  --color-outline-variant: #45474a;
+  --color-surface-container-highest: #333538;
+  --color-primary: #2ddbde;
+  --color-tertiary-fixed-dim: #ffb4a8;
+  --color-on-primary-fixed: #002020;
+  --color-surface-tint: #2ddbde;
+  --color-error-container: #93000a;
+  --color-inverse-surface: #e2e2e6;
+  --color-tertiary-fixed: #ffdad4;
+  --color-error: #ffb4ab;
+  --color-on-secondary: #223240;
+  --color-surface-container-low: #1a1c1f;
+  --color-primary-fixed-dim: #2ddbde;
+  --color-on-error-container: #ffdad6;
+  --color-secondary-container: #394857;
+  --color-tertiary: #ffb4a8;
+  --color-on-tertiary-container: #e64230;
+  --color-surface-container: #1e2023;
+  --color-secondary-fixed: #d4e4f6;
+  --color-primary-container: #001718;
+  --color-on-secondary-fixed: #0d1d2a;
+  --color-on-secondary-container: #a7b7c8;
+  --color-on-tertiary-fixed-variant: #930000;
+  --color-on-primary-fixed-variant: #004f51;
+  --color-on-primary: #003738;
+  --color-on-secondary-fixed-variant: #394857;
+  --color-surface-bright: #37393d;
+  --color-surface-container-lowest: #0c0e11;
+
+  --font-headline: "Newsreader", serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Space Grotesk", monospace;
+}
+
+@layer utilities {
+  .perspective-grid {
+    background-image: 
+      linear-gradient(to right, rgba(69, 71, 74, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(69, 71, 74, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    perspective: 1000px;
+  }
+  
+  .vanishing-point-lines {
+    background: radial-gradient(circle at 50% 50%, transparent 0%, #111316 70%),
+                repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg 15deg, rgba(45, 219, 222, 0.03) 15deg 16deg);
+  }
+  
+  .flicker-hover:hover {
+    animation: flicker 0.2s infinite alternate;
+  }
+  
+  .ghost-border {
+    outline: 1px solid rgba(69, 71, 74, 0.15);
+  }
+  
+  .ghost-border:hover {
+    outline: 1px solid rgba(45, 219, 222, 0.4);
+  }
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
